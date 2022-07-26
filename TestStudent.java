@@ -10,6 +10,8 @@ public class TestStudent {
         s1.id=101;
         s1.name="xyz";
         System.out.println(s1.id+" "+s1.name);
+       
+        }
     }
-}
+
 
