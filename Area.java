@@ -1,6 +1,73 @@
 import java.io.*;
 
-class Shape{
+abstract class Shape{
+    
+    String objname="";
+    Shape(String name){
+        this.objname=name;
+    }
+    abstract void area();  // Abstract method without functionlity.
+    public void message(){System.out.println("Hello");} // Normal method with functionality.
+
+}
+
+class Rectangle extends Shape{
+    int length,breadth,height;
+    Rectangle(int a1,int b1,int c1,String name){
+        
+        super(name); // Parent constructor calling.
+        
+        length=a1;
+        breadth=b1;
+        height=c1;
+    }
+    void area(){
+        System.out.println("Area of " +objname+ " is= "+(length*breadth*height));
+    }
+    
+
+}
+
+class Circle1 extends Shape{
+    int radius;
+    Circle1(int a1,String name){
+        super(name); // Parent constructor calling.
+        radius=a1;    
+    }
+    void area(){
+        System.out.println("Area of " +objname+ " is= "+(3.14f*radius*radius));
+    }
+
+}
+
+class Area{
+    public static void main(String[] args) {
+        Shape s1=new Rectangle(1, 2, 3,"Rectangle");
+        Shape s2=new Circle1(3,"Circle");
+        s1.area();
+        s2.area();
+        s1.message();
+        s2.message();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Program to calculate area of rectangle and circle.
+/* class Shape{
     float radius;
     float length,breadth,height;
     Shape(float r){
@@ -24,8 +91,6 @@ class Shape{
     }
 }
 
-
-
 class Area {
     public static void main(String[] args) throws IOException{
         int choice;
@@ -47,4 +112,4 @@ class Area {
         }
 
     }
-}
+} */
