@@ -13,6 +13,7 @@ class BST_class {
     } 
     // BST root node 
     Node root; 
+    int sum=0;
   
    // Constructor for BST =>initial empty tree
     BST_class(){ 
@@ -109,7 +110,8 @@ class BST_class {
     void inorder_Recursive(Node root) { 
         if (root != null) { 
             inorder_Recursive(root.left); 
-            System.out.print(root.key + " "); 
+            System.out.print(root.key + " ");
+            //sum=sum+1; 
             inorder_Recursive(root.right); 
         } 
     } 
@@ -150,6 +152,23 @@ class BST_class {
         // val is less than root's key 
         return search_Recursive(root.right, key); 
     } 
+
+    // recursively find the number of children in tree.
+    void numChild()
+    { System.out.println(root);
+        System.out.println("Total children:"+(numChild_recursive(root)));}
+
+    int numChild_recursive(Node root)
+    {
+        if (root != null) { 
+             
+            //System.out.print(root.key + " ");
+            if(root.left==null && root.right==null){sum=sum+1;} 
+            numChild_recursive(root.left);
+            numChild_recursive(root.right); 
+        } 
+        return sum;
+    }
 }
 class Main{
     public static void main(String[] args)  { 
@@ -178,6 +197,9 @@ class Main{
 
         System.out.println("\nPostorder: ");
         bst.postorder();
+
+        System.out.println("\nTotal children: ");
+        bst.numChild();
 
 
        /*  //delete the node with one child
