@@ -47,7 +47,7 @@ public class Stack_Ex {
                 {
                     System.out.println("Stack is empty !");
                 }else{
-                System.out.println("Pop element from Stack is: "+s1.pop());
+                    System.out.println("Pop element from Stack is: "+s1.pop());
                 }
                 break;
 
@@ -87,7 +87,7 @@ public class Stack_Ex {
                 break;
 
                 default:
-                System.out.println("Not valid choice");
+                    System.out.println("Not valid choice");
           
             }
             if(choice==5)
